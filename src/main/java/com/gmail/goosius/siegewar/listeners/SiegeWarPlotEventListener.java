@@ -5,6 +5,7 @@ import com.gmail.goosius.siegewar.objects.BattleSession;
 import com.gmail.goosius.siegewar.settings.SiegeWarSettings;
 import com.gmail.goosius.siegewar.utils.SiegeWarDistanceUtil;
 import com.palmergames.bukkit.towny.event.damage.TownBlockPVPTestEvent;
+import com.palmergames.bukkit.towny.event.damage.TownBlockExplosionTestEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -30,6 +31,17 @@ public class SiegeWarPlotEventListener implements Listener {
 		    && !event.getTownBlock().getPermissions().pvp
 		    && SiegeWarDistanceUtil.isTownBlockInActiveSiegeZone(event.getTownBlock())) {
 				event.setPvp(true);
+		}
+	}
+	@EventHandler(ignoreCancelled = true)
+	public void onTownBlockExplosionTest(TownBlockExplosionTestEvent event) {
+		if (SiegeWarSettings.getWarSiegeEnabled()
+		&& event.getTownBlock().getWorld().isWarAllowed()
+		&& SiegeWarSettings.isStopTownyPlotExplosionProtection()
+		&& BattleSession.getBattleSession().isActive()
+		&& !event.getTownBlock().getPermissions().explosion
+		&&SiegeWarDistanceUtil.isTownBlockInActiveSiegeZone((event.getTownBlock()))) {
+			event.setExplosion(true);
 		}
 	}
 }

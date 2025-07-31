@@ -874,6 +874,11 @@ public enum ConfigNodes {
 			"# Battle Sessions                                          #",
 			"############################################################",
 			""),
+	PVP_PROTECTION_OVERRIDES_STOP_TOWNY_PLOT_EXPLOSION_PROTECTION(
+			"pvp_protection_overrides.stop_towny_explosion_protection",
+			"true",
+			"",
+			"# If true, then Kaboom!"),
 	PVP_PROTECTION_OVERRIDES_STOP_TOWNY_PLOT_PVP_PROTECTION(
 			"pvp_protection_overrides.stop_towny_plot_protection",
 			"true",
