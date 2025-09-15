@@ -100,6 +100,10 @@ public class SiegeWarSettings {
 		return Settings.getDouble(ConfigNodes.WAR_SIEGE_PLUNDER_AMOUNT_PER_PLOT);
 	}
 
+	public static double getWarSiegePlunderMinimum() {
+		return Settings.getDouble(ConfigNodes.WAR_SIEGE_PLUNDER_MINIMUM);
+	}
+
 	public static int getSiegeDurationBattleSessions() {
 		return Settings.getInt(ConfigNodes.SIEGE_DURATION_BATTLE_SESSIONS);
 	}

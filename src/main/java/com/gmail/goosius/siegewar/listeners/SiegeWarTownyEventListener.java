@@ -492,7 +492,6 @@ public class SiegeWarTownyEventListener implements Listener {
 
 		// Towny is going to drop the inventory, but we want inventories saved.
 		if (event.isCancelled() && SiegeWarSettings.isKeepInventoryOnSiegeZoneDeathEnabled()) {
-
 			Siege siege = SiegeWarAPI.getActiveSiegeAtLocation(event.getLocation());
 			// But we don't want defenders that are losing too greatly to keep their inventories.
 			if (SiegeWarSettings.isDefendersDropInventoryWhenLosingEnabled()

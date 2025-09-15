@@ -180,6 +180,12 @@ public enum ConfigNodes {
 			"40.0",
 			"",
 			"# This is the amount which an attacking nation will plunder if they choose to do so after a siege victory."),
+	WAR_SIEGE_PLUNDER_MINIMUM(
+			"war.siege.money.plunder.minimum",
+			"0.0",
+			"",
+			"# This is the minimum amount a town can be plundered for."),
+
 	WAR_SIEGE_PLUNDER_PAID_OVER_TIME(
 			"war.siege.money.plunder.plunder_paid_over_time",
 			"false",

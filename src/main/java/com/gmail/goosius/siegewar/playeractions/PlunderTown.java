@@ -97,7 +97,12 @@ public class PlunderTown {
 				SiegeWarSettings.getWarSiegePlunderAmountPerPlot()
 				* town.getTownBlocks().size()
 				* SiegeWarMoneyUtil.getMoneyMultiplier(town);
-		
+
+		//Set amount to minimum if lower, assuming I did this right
+		if (totalPlunderAmount < SiegeWarSettings.getWarSiegePlunderMinimum()) {
+			totalPlunderAmount = SiegeWarSettings.getWarSiegePlunderMinimum();
+		}
+
 		//Adjust amount for ATTACKER_CLOSE_WIN.
 		if(siege.getStatus().reducesPlunder()) {
 			totalPlunderAmount = totalPlunderAmount / 100 * (100 - SiegeWarSettings.getSpecialVictoryEffectsPlunderReductionPercentageOnCloseVictory());
