@@ -42,7 +42,7 @@ public class SiegeWarSicknessUtil {
 
             // check if in a siege zone
             Siege siege = SiegeController.getActiveSiegeAtLocation(location);
-            if (siege == null)
+            if (siege == null || !siege.getStatus().isActive())
                 continue;
 
             Resident resident = TownyUniverse.getInstance().getResident(player.getUniqueId());
